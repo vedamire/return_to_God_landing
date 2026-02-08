@@ -39,8 +39,8 @@ function FamilyOverlay() {
             <div className="family-overlay-names">
               <span>Kate</span>
               <span>Ved</span>
-              <span>Emily</span>
               <span>Alice</span>
+              <span>Emily</span>
             </div>
           </div>
         </div>
