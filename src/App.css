@@ -6,17 +6,9 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  min-height: 100vh;
+  height: 100vh;
   text-align: center;
   padding: 2rem;
-}
-
-.footer {
-  position: relative;
-  z-index: 10;
-  display: flex;
-  justify-content: center;
-  padding: 0 2rem 2.5rem;
 }
 
 .title {

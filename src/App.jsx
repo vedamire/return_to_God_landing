@@ -14,10 +14,8 @@ function App() {
         <div className="title-underline"></div>
         <p className="subtitle">Join the Movement</p>
         <StoreButtons />
-      </main>
-      <footer className="footer">
         <FamilyOverlay />
-      </footer>
+      </main>
     </>
   )
 }
