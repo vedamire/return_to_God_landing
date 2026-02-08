@@ -1,0 +1,82 @@
+.sound-toggle {
+  position: fixed;
+  top: 1.5rem;
+  right: 1.5rem;
+  z-index: 20;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--panel-bg);
+  border: 1.5px solid var(--border-color);
+  border-radius: 50%;
+  color: var(--text-primary);
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  animation: soundToggleFadeIn 1.2s ease-out 1.8s backwards;
+}
+
+.sound-toggle::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(212, 168, 83, 0.1),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.sound-toggle:hover {
+  border-color: var(--accent-gold);
+  color: var(--accent-gold);
+  box-shadow:
+    0 0 20px var(--accent-glow),
+    inset 0 0 20px rgba(212, 168, 83, 0.05);
+}
+
+.sound-toggle:hover::before {
+  left: 100%;
+}
+
+.sound-toggle:active {
+  transform: scale(0.95);
+}
+
+.sound-toggle svg {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+}
+
+@keyframes soundToggleFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 480px) {
+  .sound-toggle {
+    top: 1rem;
+    right: 1rem;
+    width: 42px;
+    height: 42px;
+  }
+
+  .sound-toggle svg {
+    width: 20px;
+    height: 20px;
+  }
+}

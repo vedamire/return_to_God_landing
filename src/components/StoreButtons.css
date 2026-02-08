@@ -1,0 +1,113 @@
+.store-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  animation: buttonsFadeIn 1.2s ease-out 1.8s backwards;
+}
+
+.store-button {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.2rem 2.5rem;
+  background: var(--panel-bg);
+  border: 1.5px solid var(--border-color);
+  border-radius: 12px;
+  color: var(--text-primary);
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  cursor: pointer;
+}
+
+.store-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(212, 168, 83, 0.1),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.store-button:hover {
+  border-color: var(--accent-gold);
+  box-shadow:
+    0 0 20px var(--accent-glow),
+    inset 0 0 20px rgba(212, 168, 83, 0.05);
+}
+
+.store-button:hover::before {
+  left: 100%;
+}
+
+.store-button:active {
+  transform: scale(0.98);
+}
+
+.store-icon {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+}
+
+.store-text {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.store-label {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1;
+  letter-spacing: 0.02em;
+}
+
+.store-name {
+  font-family: var(--font-body);
+  font-size: 1.45rem;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+}
+
+@keyframes buttonsFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .store-buttons {
+    gap: 1rem;
+  }
+
+  .store-button {
+    padding: 1rem 2rem;
+  }
+
+  .store-icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .store-name {
+    font-size: 1.2rem;
+  }
+}
